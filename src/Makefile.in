@@ -108,7 +108,8 @@ bin_PROGRAMS = execstack
 arch_SOURCES = arch-i386.c arch-alpha.c arch-ppc.c arch-ppc64.c \
 	       arch-sparc.c arch-sparc64.c arch-x86_64.c arch-mips.c \
 	       arch-s390.c arch-s390x.c arch-arm.c arch-sh.c arch-ia64.c \
-	       arch-aarch64.c arch-riscv64.c
+	       arch-aarch64.c arch-riscv64.c \
+	       arch-x32.c
 
 common_SOURCES = checksum.c data.c dso.c dwarf2.c dwarf2.h fptr.c fptr.h     \
 		 hashtab.c hashtab.h mdebug.c prelink.h stabs.c crc32.c
@@ -141,7 +142,8 @@ am__objects_2 = arch-i386.$(OBJEXT) arch-alpha.$(OBJEXT) \
 	arch-sparc64.$(OBJEXT) arch-x86_64.$(OBJEXT) \
 	arch-mips.$(OBJEXT) arch-s390.$(OBJEXT) arch-s390x.$(OBJEXT) \
 	arch-arm.$(OBJEXT) arch-sh.$(OBJEXT) arch-ia64.$(OBJEXT) \
-	arch-aarch64.$(OBJEXT) arch-riscv64.$(OBJEXT)
+	arch-aarch64.$(OBJEXT) arch-riscv64.$(OBJEXT) \
+	arch-x32.$(OBJEXT)
 am_execstack_OBJECTS = execstack.$(OBJEXT) $(am__objects_1) \
 	$(am__objects_2)
 execstack_OBJECTS = $(am_execstack_OBJECTS)
@@ -164,7 +166,7 @@ LIBS = @LIBS@
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
 @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/arch-alpha.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/arch-arm.Po ./$(DEPDIR)/arch-aarch64.Po ./$(DEPDIR)/arch-i386.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/arch-arm.Po ./$(DEPDIR)/arch-aarch64.Po ./$(DEPDIR)/arch-x32.Po ./$(DEPDIR)/arch-i386.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/arch-ia64.Po ./$(DEPDIR)/arch-mips.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/arch-ppc.Po ./$(DEPDIR)/arch-ppc64.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/arch-s390.Po ./$(DEPDIR)/arch-s390x.Po \
@@ -292,6 +294,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/arch-sparc64.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/arch-riscv64.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/arch-x86_64.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/arch-x32.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cache.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/canonicalize.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/checksum.Po@am__quote@
